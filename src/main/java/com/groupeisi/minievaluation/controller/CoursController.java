@@ -21,7 +21,7 @@ public class CoursController {
 
     private ICoursService coursService = new CoursService();
 
-    @GetMapping("/cours")
+    @GetMapping(name = "cours", value ="/")
     public String showCours(Model model) {
 
         try {
@@ -37,7 +37,7 @@ public class CoursController {
             logger.error("Erreur lors de la récupération des produits", e);
         }
 
-        return "cours/cours";
+        return "cours";
     }
 
     @PostMapping("/cours")
@@ -61,7 +61,6 @@ public class CoursController {
         } catch (Exception e) {
             logger.error("Erreur lors de l'enregistrement du cours", e);
         }
-
-        return "redirect:/cours";
+        return "redirect:cours";
     }
 }
