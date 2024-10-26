@@ -61,6 +61,6 @@ public class CoursController {
         } catch (Exception e) {
             logger.error("Erreur lors de l'enregistrement du cours", e);
         }
-        return "redirect:cours";
+        return "redirect:/";
     }
 }
